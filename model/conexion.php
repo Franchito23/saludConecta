@@ -3,20 +3,21 @@
     //CONFIGURACIÓN DE DATOS DE ACCESO  A LA BASE DE DATOS
 
     class Conexion {
-        private $dsn = 'mysql:host=localhost;dbname=BD_saludConecta';
-        private $usuario = 'root';
-        private $password = '12345';
-      
-        public function conectar() {
+      private $dsn = 'mysql:host=saludconecta.mysql.database.azure.com;port=3306;dbname=BD_saludConecta';
+      private $usuario = 'Frank';
+      private $password = '{tu_contraseña}';
+    
+      public function conectar() {
           try {
-            $conn = new PDO($this->dsn, $this->usuario, $this->password);
-            return $conn;
+              $conn = new PDO($this->dsn, $this->usuario, $this->password);
+              return $conn;
           } catch (PDOException $e) {
-            echo "Error de conexión: " . $e->getMessage();
-            exit;
+              echo "Error de conexión: " . $e->getMessage();
+              exit;
           }
-        }
       }
+  }
+  
    
 
     
