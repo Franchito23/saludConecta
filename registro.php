@@ -9,8 +9,8 @@ if (!empty($_SESSION['activo'])) {
   
     //INCLUIR LA CONEXIÓN
     include_once("model/conexion.php");
-    $conexion = new Conexion();
-    $mysqli = $conexion->conectar();
+    $conn = new Conexion();
+    $mysqli = $conn->conectar();
 
 if (isset($_POST["crear"])) {
 
