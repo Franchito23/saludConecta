@@ -4,7 +4,7 @@
 
     class Conexion {
       private $dsn = 'mysql:host=saludconecta.mysql.database.azure.com;port=3306;dbname=BD_saludConecta';
-      private $usuario = 'Frank';
+      private $usuario = 'Frank@saludconecta';
       private $password = 'saludConecta.';
     
       public function conectar() {
