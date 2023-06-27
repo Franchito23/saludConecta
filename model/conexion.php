@@ -9,7 +9,7 @@
     
       public function conectar() {
           try {
-              $conn = new PDO($this->dsn, $this->usuario, $this->password, $opciones);
+              $conn = new PDO($this->dsn, $this->usuario, $this->password);
               return $conn;
           } catch (PDOException $e) {
               echo "Error de conexión: " . $e->getMessage();
