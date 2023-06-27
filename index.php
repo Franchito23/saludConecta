@@ -53,11 +53,10 @@ if (!empty($_SESSION['activo'])) {
            
       }else {
         
-      $query = "SELECT * FROM TBL_usuario WHERE correo=:email AND clave=:password";
+      $query = "SELECT * FROM TBL_usuario WHERE correo=:email";
 
       $stmt = $mysqli->prepare($query);
       $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-      $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
 
       $resultado = $stmt->execute();
       $registro = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -66,20 +65,22 @@ if (!empty($_SESSION['activo'])) {
         $error = "Error, Acceso inválido";
       }else {
 
-        $_SESSION['activo'] = true;
-        $_SESSION['id_usuario'] = $registro['id_usuario'];
-        $_SESSION['nombreCompleto'] = $registro['nombreCompleto'];
-        $_SESSION['correo'] = $registro['correo'];
-        $_SESSION['documento'] = $registro['documento'];
-        $_SESSION['estado'] = $registro['estado'];
-        $_SESSION['id_rol'] = $registro['id_rol'];
-        $_SESSION['telefono'] = $registro['telefono'];
-
-        if ($registro['id_rol'] == 2) {
-          header("Location:homeAdmin.php");
-        }else {
-          header("Location:home.php");
-        }
+        if (password_verify($pass, $registro['clave'])) {
+          $_SESSION['activo'] = true;
+          $_SESSION['id_usuario'] = $registro['id_usuario'];
+          $_SESSION['nombreCompleto'] = $registro['nombreCompleto'];
+          $_SESSION['correo'] = $registro['correo'];
+          $_SESSION['documento'] = $registro['documento'];
+          $_SESSION['estado'] = $registro['estado'];
+          $_SESSION['id_rol'] = $registro['id_rol'];
+          $_SESSION['telefono'] = $registro['telefono'];
+  
+          if ($registro['id_rol'] == 2) {
+            header("Location:homeAdmin.php");
+          }else {
+            header("Location:home.php");
+          }
+        } 
         
       }
     }
@@ -92,7 +93,6 @@ if (!empty($_SESSION['activo'])) {
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

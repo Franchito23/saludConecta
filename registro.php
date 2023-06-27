@@ -22,6 +22,7 @@ if (isset($_POST["crear"])) {
 
     if (!empty($nombre) && $nombre !="" && !empty($correo) && $correo !="" && !empty($documento) && $documento !="" && !empty($telefono) && $telefono !="" && !empty($clave) && $clave !="") {
         
+        $clave_encriptada = password_hash($clave,PASSWORD_DEFAULT);
         $query = "INSERT INTO TBL_usuario (nombreCompleto, correo, documento, telefono, clave) VALUES (:nombreCompleto, :correo, :documento, :telefono, :clave)";
 
         $stmt = $mysqli->prepare($query);
@@ -29,7 +30,7 @@ if (isset($_POST["crear"])) {
         $stmt->bindParam(":correo", $correo, PDO::PARAM_STR);
         $stmt->bindParam(":documento", $documento, PDO::PARAM_STR);
         $stmt->bindParam(":telefono", $telefono, PDO::PARAM_STR);
-        $stmt->bindParam(":clave", $clave, PDO::PARAM_STR);
+        $stmt->bindParam(":clave", $clave_encriptada, PDO::PARAM_STR);
   
 
         $resultado = $stmt->execute();

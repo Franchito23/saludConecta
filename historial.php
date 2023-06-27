@@ -15,91 +15,62 @@ include "controller/historialCon.php";
 
 
 
-<div class="contenedor">
-
-
-    <main class="table">
-        <section class="table-header">
-         <h2 class="animate__animated animate__fadeInUp">Historial de citas</h2>
-        </section>
-        <section class="table-body">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Doctor</th>
-                        <th>Fecha creación</th>
-                        <th>Fecha cita</th>
-                        <th>Motivo de la cita</th>
-                        <th>Paciente</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($registros as $fila): ?>
-                    <tr>
-                        <td>
-                        <?php echo $fila->nombre_doc; ?>
-                        </td>
-                        <td>
-                        <?php echo $fila->fecha_creacion; ?>
-                          </td>
-                          <td>
-                          <?php echo $fila->fecha_cita; ?>
-                          </td>
-                          <td>
-                          <?php echo $fila->motivo_cita; ?>
-                          </td>
-                          </td>
-                          <td>
-                          <?php echo $fila->nombreCompleto; ?>
-                          </td>
-                          <td>
-                            
-
-                            <form method="post">
-                            <a href="eliminarCita.php?id=<?php echo $fila->id_citas; ?>">
-                           <button name="eliminar" type="submit" class="boton"><i class="fa-solid fa-trash"></i></button>
-                            </a>
-                            <a href="editCita.php?id=<?php echo $fila->id_citas; ?>" class="boton">
-                           <i class="fa-solid fa-pencil"></i>
-                            </a>
-                            </form>
-                          </td>
-                    </tr>
-
-
-                    <?php  
-                    if (isset($_POST['eliminar'])) {
-                        echo "<script>
-                            Swal.fire({
-                                title: '¿Estás seguro?',
-                                text: 'Esta acción eliminará la cita',
-                                icon: 'warning',
-                                showCancelButton: true,
-                                confirmButtonText: 'Sí, eliminar',
-                                cancelButtonText: 'Cancelar'
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location = 'eliminarCita.php?id=$fila->id_citas;'; 
-                                } else {
-                                    window.location = 'historial.php'; 
-                                }
-                            });
-                        </script>";
-                    }
-                    ?>
-
-
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </section>
-    </main>
-
+<div class="bienvenida">
+        <h1>Historial</h1>
+        <p>Aquí puedes ver todas las citas que has hecho!</p>
     </div>
+    <?php foreach($registros as $fila): ?>
+    <form method="post">
+        <div class="card-container">
+          <div class="card">
+            <img src="img/Doctor-Icon.svg" alt="Imagen 1">
+            <h2>Cita</h2>
+            <p>
+              <?php echo "<strong>Nombre doctor:</strong> $fila->nombre_doc <br>"; ?>
 
+              <?php echo "<strong>Fecha creación:</strong> $fila->fecha_creacion <br>"; ?>
 
+                <?php echo "<strong>Fecha cita:</strong> $fila->fecha_cita <br>"; ?>
 
+                <?php echo "<strong>Motivo:</strong> $fila->motivo_cita <br>"; ?>
 
+                <?php echo "<strong>Paciente:</strong> $fila->nombreCompleto"; ?>
 
+            </p>
+            <br>
+            <div class="card-buttons">
+              <button name="eliminar" type="submit" class="delete-button">
+                <i class="fa-solid fa-trash"></i> Eliminar
+              </button>
+              <button name="actualizar" type="submit" class="update-button">
+                <i class="fa-solid fa-pencil"></i> Actualizar
+              </button>
+            </div>
+          </div>
 
+          
+        </div>
+      </form>
+
+      <?php  
+      if (isset($_POST['eliminar'])) {
+          echo "<script>
+              Swal.fire({
+                  title: '¿Estás seguro?',
+                  text: 'Esta acción eliminará la cita',
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Sí, eliminar',
+                  cancelButtonText: 'Cancelar'
+              }).then((result) => {
+                  if (result.isConfirmed) {
+                      window.location = 'eliminarCita.php?id=$fila->id_citas;'; 
+                  } else {
+                      window.location = 'historial.php'; 
+                  }
+              });
+          </script>";
+      }
+      ?>
+          
+      <?php endforeach; ?>

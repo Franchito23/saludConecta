@@ -39,7 +39,7 @@ body{
 }
 
 .side-bar .menu .item a{
-  color: #464545;
+  color: #252525;
   font-size: 16px;
   text-decoration: none;
   display: block;
@@ -81,7 +81,7 @@ body{
 }
 
 .navbarc{
-  background: #A4C7D5;
+  background: #cfe6ef;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
