@@ -20,7 +20,7 @@
 
 //CONFIGURACIÓN DE DATOS DE ACCESO A LA BASE DE DATOS
 
-$ruta_certificado_ca = "{path to CA cert}";
+$ruta_certificado_ca = "../certificado/DigiCertGlobalRootCA.crt.pem";
 
 // Crear una instancia de la conexión mysqli
 $conn = mysqli_init();
