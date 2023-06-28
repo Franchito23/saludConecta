@@ -21,7 +21,7 @@
 //CONFIGURACIÓN DE DATOS DE ACCESO A LA BASE DE DATOS
 
 class Conexion {
-    private $dsn = 'mysql:host=saludconecta.mysql.database.azure.com;port=33062;dbname=BD_saludConecta';
+    private $dsn = 'mysql:host=saludconecta.mysql.database.azure.com;port=3306;dbname=BD_saludConecta';
     private $usuario = 'Frank';
     private $password = 'saludConecta.';
   
