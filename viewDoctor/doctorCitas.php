@@ -5,12 +5,11 @@ include "../controller/deleteCitaCon.php";
 ?>
 
 
-
 <head>
 <link rel="stylesheet" href="../css/historial.css">
   <title>Citas Pendientes</title>
 </head>
-          <div class="title"> 
+          <div class="bienvenida"> 
             <h2 class="animate__animated animate__fadeInUp">Citas pendientes</h2>
             <p>Mira las citas que tienes pendientes, da click en el check cuando termines la cita</p>
          </div> 
@@ -19,14 +18,17 @@ include "../controller/deleteCitaCon.php";
               <div class="headerc">
                 <form method="post">
                 <a href="eliminarDoc.php?id=<?php echo $fila->id_citas; ?>">
-                <button type="submit" name="eliminar"><i class="fa-solid fa-check"></i></button>
+                <button type="submit" name="eliminar" class="check-icon"><i class="fa-solid fa-check"></i></button>
               </a>
               </form>
+              <div class="img-wrapper">
                 <img src="../img/User-Icon.svg" alt="Imagen del remitente" width="100px" class="img">
+                </div>
               </div>
-              <div class="card-title"><strong>Nombre usuario:</strong><?php echo $fila->nombreCompleto; ?></div>
-              <div class="subtitle"><strong>Motivo de la cita:</strong> <?php echo $fila->motivo_cita; ?></div>
               <div class="content">
+              <div class="card-title"><strong>Usuario: </strong><?php echo $fila->nombreCompleto; ?></div>
+              <div class="subtitle"><strong>Motivo de la cita:</strong> <?php echo $fila->motivo_cita; ?></div>
+              
                 <ul>
                   <li><strong>Fecha de creación:</strong> <?php echo $fila->fecha_creacion; ?></li>
                   <li><strong>Fecha de cita:</strong> <?php echo $fila->fecha_cita; ?></li>

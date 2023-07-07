@@ -15,12 +15,9 @@ if ($_SESSION['id_rol'] != 2) {
   <link rel="stylesheet" href="css/citas.css">
 </head>
 
-<div class="container">
+<h1 class="animate__animated animate__fadeInDown text">Bienvenido Admin <?php echo $nombre; ?>!</h1>
 
-<h1 class="animate__animated animate__fadeInDown text-center">Bienvenido Admin <?php echo $nombre; ?>!</h1>
-<div class="sectionOne">
-    <section>
-    <div class="cardForm">
+<div class="cardForm">
 
     <form method="post" class="medical-form">
     <h3 class="text-center animate__animated animate__fadeInDown">Inserta los doctores</h3>
@@ -51,9 +48,8 @@ if ($_SESSION['id_rol'] != 2) {
     </form>
     </div>
 
-    </section>
-</div>
-</div>
+
+
 
 <?php if(isset($mensaje)) : ?>
                   <script>

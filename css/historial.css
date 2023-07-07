@@ -5,6 +5,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.update-button a{
+  text-decoration: none !important;
+  font-style: none;
+  color: #fff;
+}
+
 body{
     background-color: aliceblue !important;
     height: 100vh;
@@ -91,4 +97,93 @@ body{
   .card {
       width: 90%;
   }
+}
+
+.container-doc {
+  border: 1px solid #265d72;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 300px;
+  margin: 40px;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  
+}
+
+.container-doc:hover {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.headerc {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.check-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #487688;
+  font-size: 16px;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  appearance: none;
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80px;
+  position: relative;
+}
+
+
+
+
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content ul li {
+  margin-bottom: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.boton {
+  padding: 10px 20px;
+  background-color: #265d72;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: .5s;
+}
+
+.boton:hover{
+  background-color: rgba(38, 92, 114, 0.743);
 }

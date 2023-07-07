@@ -43,7 +43,9 @@ include "controller/historialCon.php";
                 <i class="fa-solid fa-trash"></i> Eliminar
               </button>
               <button name="actualizar" type="submit" class="update-button">
+                <a href="editCita.php?id=<?php echo $fila->id_citas; ?>">
                 <i class="fa-solid fa-pencil"></i> Actualizar
+                </a>
               </button>
             </div>
           </div>

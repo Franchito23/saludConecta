@@ -109,3 +109,10 @@ body {
   margin-bottom: 15px;
   color: #1e485a;
  }
+
+ .text{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #1e485a;
+ }
