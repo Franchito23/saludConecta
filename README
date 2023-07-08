@@ -1,1 +1,20 @@
 Proyecto SENA SaludConecta
+
+Descripción del proyecto: SaludConecta es un sitio web creado para personas y doctores, en el cuál esperamos que se conecten y mejore la comunicación entre paciente y doctor
+
+Instalación: No requiere de instalación
+
+Uso: Si eres un usuario común, solo debes crear tu cuenta de manera totalmente gratuita e iniciar sesión para disfrutar de la experiencia. 
+Si eres un doctor, deberas comunicarte con nosotros para ver si eres apto de prestar los servicios médicos.
+
+Estructura de código:
+
+Se organiza en tres componentes principales: Modelo, vista, controlador.
+
+En donde la vista se encarga de la interfaz del usuario, doctor y administrador y finalmente incluimos el controlador
+
+Modelo: se encarga de la conexión a la base de datos y de hacer la interacción en la misma.
+
+Controlador: intermediario entre el modelo y la vista.
+
+De esta forma proporcionamos una estructura organizada y fácil de hacer mantenimientos y escalabilidad de código. Además, el haber elegido php como lenguaje principal para el backend ofrece flexibilidad y robustez en el almacenamiento y gestión de datos.
